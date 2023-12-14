@@ -7,7 +7,15 @@
 </head>
 <body>
     <script>
-
+        const calculate = (num1) => {
+            return (num2) => {
+                return (num3) => {
+                    return num1 + num2 + num3;
+                }
+            }
+        }
+        const sum = calculate(54)(89)(17);
+        console.log(sum);
     </script>
 </body>
 </html>
