@@ -7,7 +7,23 @@
 </head>
 <body>
     <script>
+        function func1(string){
+            return "Первая " + string
+        }
 
+        const func2 = function(string){
+            return "Вторая " + string
+        }
+
+        const func3 = string => {
+            return "Третья " + string
+        }
+
+        const func4 = string => "Четвертая " + string
+
+        console.log(func1('функция'))
+        console.log(func2('функция'))
+        console.log(func3('функция'))
     </script>
 </body>
 </html>
