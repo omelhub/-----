@@ -7,9 +7,9 @@
 </head>
 <body>
     <script>
-
-        const info = () => {
-
+        const info = ({firstName, lastName, age = 18}) => {
+            console.log(`Меня зовут ${firstName} ${lastName}`);
+            console.log(`Мне ${age} лет`);
         }
 
         const obj = {
@@ -17,12 +17,13 @@
             lastName: 'Иванов',
         }
 
-        const name = 'Иван2';
-        const last = 'Иванов2';
-        const age = 50;
+        // const name = 'Иван2';
+        // const last = 'Иванов2';
+        // const age = 50;
 
         info(obj);
         console.log('----');
+        const { firstName: name, lastName: last, age } = obj;
         info({firstName: name, lastName: last, age});
 
     </script>
