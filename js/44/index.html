@@ -8,6 +8,13 @@
 <body>
     <script>
         const fructs = ['Банан', 'Арбуз', 'Яблоко', 'Виноград', 'Груша'];
+        const appleIndex = fructs.indexOf('Яблоко');
+        if (appleIndex !== -1) {
+            fructs.splice(appleIndex, 1);
+        }
+        
+        fructs.shift();
+        fructs.pop();   
 
         console.log(fructs)
     </script>
