@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 53</title>
+    <style>
+        .container{
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 50px 0;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 24px;
+            background-color: #2196F3;
+            cursor: pointer;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="button" type="button"> <span>А</span> Нажми меня  <span>Я</span> </button>
+    </div>
+
+    <script>
+        const button = document.querySelector('.button');
+        button.addEventListener('click', (event) => {
+            console.log("className:", event.currentTarget.className);
+            console.log("textContent:", event.currentTarget.textContent);
+            console.log("innerHTML:", event.currentTarget.innerHTML);
+            console.log("nodeName:", event.currentTarget.nodeName);
+            console.log("previousElementSibling:", event.currentTarget.previousElementSibling);
+            console.log("previousSibling:", event.currentTarget.previousSibling);
+            console.log("nextSibling:", event.currentTarget.nextSibling);
+            console.log("nextElementSibling:", event.currentTarget.nextElementSibling);
+            console.log("firstChild:", event.currentTarget.firstChild);
+            console.log("firstElementChild:", event.currentTarget.firstElementChild);
+            console.log("lastChild:", event.currentTarget.lastChild);
+            console.log("lastElementChild:", event.currentTarget.lastElementChild);
+            console.log("parentElement:", event.currentTarget.parentElement);
+            console.log("childNodes:", event.currentTarget.childNodes);
+            console.log("children:", event.currentTarget.children);
+        })
+    </script>
+</body>
+</html>

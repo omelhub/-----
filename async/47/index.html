@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 47</title>
+</head>
+<body>
+    <div id="by-id">Поиск по ID</div>
+    <div class="by-class">Поиск по классу 1</div>
+    <div class="by-class">Поиск по классу 2</div>
+    <article>Поиск по тегу</article>
+
+    <script>
+        const elementById = document.getElementById('by-id');
+        console.log('Get element by id:', elementById);
+
+        const elementsByClass = document.getElementsByClassName('by-class');
+        console.log('Get elements by class:', elementsByClass);
+
+        const elementsByTag = document.getElementsByTagName('article');
+        console.log('Get elements by tag:', elementsByTag);
+
+        const elementByIdQuery = document.querySelector('#by-id');
+        console.log('Get element by id with querySelector:', elementByIdQuery);
+
+        const elementByClassQuery = document.querySelector('.by-class');
+        console.log('Get element by class with querySelector:', elementByClassQuery);
+
+        const elementByTagQuery = document.querySelector('article');
+        console.log('Get element by tag with querySelector:', elementByTagQuery);
+
+        const elementsWithQuerySelector = document.querySelectorAll('#by-id, .by-class, article');
+        console.log('Get elements with querySelectorAll:', elementsWithQuerySelector);
+    </script>
+</body>
+</html>
