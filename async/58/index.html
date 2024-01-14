@@ -68,7 +68,19 @@
 
     <script>
         let activeItem = null
+        const table = document.querySelector('.table');
 
+        table.addEventListener('click', function(event) {
+            const cell = event.target.closest('.table__td');
+            if (!cell) return;
+
+            if (activeItem) {
+                activeItem.classList.remove('table__td--active');
+            }
+
+            cell.classList.add('table__td--active');
+            activeItem = cell;
+        });
     </script>
 </body>
 </html>
