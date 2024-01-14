@@ -44,8 +44,10 @@
     <script>
         const ul = document.querySelector('.tasks');
 
-        ul.addEventListener('click', function() {
-            this.classList.toggle('complete');
+        ul.addEventListener('click', function(event) {
+            if(event.target.tagName === 'LI') {
+                event.target.classList.toggle('complete');
+            }
         });
     </script>
 </body>
