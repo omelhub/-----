@@ -109,6 +109,7 @@
         lists.forEach(item => {
             const newItem = document.createElement('div');
             newItem.classList.add('item');
+            newItem.id = item.id;
 
             const itemBg = document.createElement('div');
             itemBg.classList.add('item__bg');
@@ -139,7 +140,7 @@
 
         lists.forEach(item => {
             const htmlString = `
-                <div class="item">
+                <div class="item" id=${item.id}>
                   <div class="item__bg"></div>
                   <div class="item__body">
                     <h2 class="item__name">${item.name}</h2>
