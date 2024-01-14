@@ -91,11 +91,13 @@
     </div>
 
     <script>
-
         document.querySelector('.form').addEventListener('submit', (e) => {
-
+            event.preventDefault();
+            let formData = new FormData(event.target);
+            let entries = formData.entries();
+            let formValues = Object.fromEntries(entries);
+            console.log(formValues);
         })
-
     </script>
 </body>
 </html>
