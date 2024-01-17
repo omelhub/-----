@@ -70,6 +70,11 @@
         });
         list.onclick = function(event) {
             if (event.target.tagName === 'LI') {
+                if (event.target.classList.contains("list__element--active")){
+                    activeItem = null;
+                    event.target.classList.remove('list__element--active');
+                    return
+                }
                 if (activeItem) activeItem.classList.remove('list__element--active');
                 event.target.classList.add('list__element--active');
                 activeItem = event.target;

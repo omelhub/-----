@@ -41,8 +41,22 @@
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
 
     <script>
+        const input = document.querySelector('.js-input');
+        const button = document.querySelector('.js-button');
+        const name = document.querySelector('.js-name');
 
+        const cookieName = Cookies.get('name');
+        if (cookieName) {
+            name.textContent = cookieName;
+        }
 
+        button.addEventListener('click', function() {
+            const inputValue = input.value;
+            if (inputValue) {
+                Cookies.set('name', inputValue, { expires: 3 });
+                name.textContent = inputValue;
+            }
+        });
     </script>
 </body>
 </html>

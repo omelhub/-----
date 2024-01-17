@@ -39,8 +39,24 @@
     </div>
 
     <script>
+        const input = document.querySelector('.js-input');
+        const button = document.querySelector('.js-button');
+        const name = document.querySelector('.js-name');
 
+        const webName = localStorage.getItem('name');
+        if (webName) {
+            const parsedName = JSON.parse(webName);
+            name.textContent = parsedName.name;
+        }
 
+        button.addEventListener('click', function() {
+            const inputValue = input.value;
+            if (inputValue) {
+                const nameObject = { name: inputValue };
+                localStorage.setItem('name', JSON.stringify(nameObject));
+                name.textContent = inputValue;
+            }
+        });
     </script>
 </body>
 </html>

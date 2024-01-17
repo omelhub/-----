@@ -60,11 +60,30 @@
         const websocket = new WebSocket(url);
 
         const sendMessage = (text) => {
+            websocket.send(text)
+            const mesEl = document.createElement('div');
 
+            const date = new Date()
+            const formatDate = date.toLocaleString()
+
+            mesEl.classList.add('list__message', 'list--send');
+            mesEl.textContent = `Отправлено: ${input.value} (${formatDate})`;
+
+            list.prepend(mesEl); 
         }
 
         websocket.onmessage = (event) => {
             console.log(event)
+            
+            const mesEl = document.createElement('div');
+            mesEl.classList.add('list__message', 'list--receive');
+
+            const date = new Date()
+            const formatDate = date.toLocaleString()
+
+            mesEl.textContent = `Получено: ${event.data} (${formatDate})`;
+
+            list.prepend(mesEl);
         };
 
         websocket.onopen = (event) => {
@@ -78,7 +97,7 @@
         };
 
         button.addEventListener('click', () => {
-
+            sendMessage(input.value)
         })
 
     </script>
