@@ -38,28 +38,28 @@
     <script>
         const search = location.search;
 
-        const params = new URLSearchParams(search);
-        //const params = new URLSearchParams(window.location.hash.slice(1));
+        // const params = new URLSearchParams(search);
+        const params = new URLSearchParams(window.location.hash.slice(1));
 
         const input = document.querySelector('.js-input')
-        input.addEventListener('change', function() {
-            params.set('text', this.value);
-            window.location.search = params.toString();
-        });
         // input.addEventListener('change', function() {
         //     params.set('text', this.value);
-        //     window.location.hash = params.toString();
+        //     window.location.search = params.toString();
         // });
+        input.addEventListener('change', function() {
+            params.set('text', this.value);
+            window.location.hash = params.toString();
+        });
 
         const select = document.querySelector('.js-select')
-        select.addEventListener('change', function() {
-            params.set('car_id', this.value);
-            window.location.search = params.toString();
-        });
         // select.addEventListener('change', function() {
         //     params.set('car_id', this.value);
-        //     window.location.hash = params.toString();
+        //     window.location.search = params.toString();
         // });
+        select.addEventListener('change', function() {
+            params.set('car_id', this.value);
+            window.location.hash = params.toString();
+        });
 
         input.value = params.get('text') || '';
         select.value = params.get('car_id') || '';
